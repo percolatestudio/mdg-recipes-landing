@@ -1,0 +1,36 @@
+nav {
+  .transform(translate3d(0,0,0));
+  .position(absolute, .75em, 0, auto, 0, 100%, 3em);
+
+  color: @color-empty;
+  text-align: center;
+  z-index: 10;
+
+  .title-page {
+    .font-m1;
+    .type-secondary;
+    .title-caps;
+    .ellipsized;
+
+    .position(absolute, 50%, 0, auto, 0);
+    .transform(translate3d(0, -45%, 0));
+
+    line-height: 1;
+
+  }
+
+  .nav-group {
+    .position(absolute, 50%, auto, auto, 1.25rem);
+    .transform(translate3d(0, -50%, 0));
+    z-index: 1;
+
+    &.right {
+      left: auto;
+      right: 1.25rem;
+    }
+
+    .btns-wrapper {
+      margin-right: .75em;
+    }
+  }
+}

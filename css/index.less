@@ -1,0 +1,178 @@
+header {
+  padding-top: 9em;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+
+  .title-app {
+    .font-l3;
+    color: @color-empty;
+    margin-bottom: 1.5rem;
+  }
+  .description-app {
+    .font-m2;
+    color: @color-empty;
+    margin-bottom: 2rem;
+  }
+
+  .btn-secondary {
+    padding-left: 2em;
+    padding-right: 2em;
+    margin-bottom: 4.5em;
+  }
+  .bg-iphone5s {
+    display: inline-block;
+    width: 334px;
+    height: 697px;
+    margin-bottom: -9em;
+  }
+}
+
+.grid-3 {
+  .inline-block-whitespace;
+  .subsection {
+    width: 33.33%;
+    display: inline-block;
+    vertical-align: top;
+  }
+}
+
+.value-statement {
+  box-shadow: rgba(0,0,0,.15) 0 1px 3px 0;
+  text-align: center;
+  position: relative;
+
+  //vertical dividers of equal height
+  &:after {
+    content: '';
+    .position(absolute, 0, auto, 0, 33.33%, 33.33%, 100%);
+    border-left: 1px solid @color-rare;
+    border-right: 1px solid @color-rare;
+  }
+
+  .subsection {
+    padding: 2.5em 2.5rem 3rem;
+  }
+
+  [class^="icon-"],
+  [class*=" icon-"] {
+    .font-m3;
+    color: @color-primary;
+    display: inline-block;
+    margin-bottom: .75rem;
+  }
+  .title-subsection {
+    .font-m2;
+    .type-black;
+    .title-caps;
+    .ellipsized;
+    margin-bottom: .5rem;
+  }
+  .description-subsection {
+    color: @color-medium-well;
+    display: inline-block;
+    max-width: 200px;
+  }
+}
+
+.chefs {
+  background-image: url('img/bg-grid-recipes-1200x900.jpg');
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
+
+  padding: 9em 0;
+  .section-wrapper {
+    margin: 0 10%;
+    padding: 4.5em;
+    background: rgba(255,255,255,.95);
+    text-align: center;
+
+    .title-section {
+      .font-l1;
+      .type-black;
+      .title-caps;
+
+      color: @color-primary;
+      margin-bottom: 1rem;
+    }
+    .description-section {
+      .font-m2;
+      color: @color-medium-well;
+      line-height: 1.5em;
+      margin-bottom: 3rem;
+    }
+    .subsection-wrapper {
+      text-align: center;
+      .subsection {
+        .avatar {
+          width: 80px;
+          height: 80px;
+          border-radius: 10em;
+          display: inline-block;
+          overflow: hidden;
+          margin-bottom: 1em;
+        }
+        .name-chef {
+          .type-bold;
+        }
+        .title-chef {
+          .font-s2;
+          color: @color-medium-well;
+        }
+        .organization-chef {
+          .font-s1;
+          .type-secondary;
+          .title-caps;
+          color: @color-medium;
+        }
+      }
+    }
+  }
+}
+
+.inspire {
+  .iphone-comps {
+    white-space: nowrap;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+    > * {
+      display: inline-block;
+      vertical-align: middle;
+
+      &.bg-iphone5s {
+        z-index: 1;
+      }
+
+      &:nth-child(n+4),
+      &:nth-child(-n+2) {
+        .position(absolute, 50%);
+        .transform(translate3d(-50%, -50%, 0));
+        box-shadow: rgba(0,0,0,.15) 0 0 3px 0;
+      }
+      &:nth-child(1) { left: -5%;}
+      &:nth-child(2) { left: 20%; }
+      &:nth-child(4) { left: 80%; }
+      &:nth-child(5) { left: 105%; }
+    }
+  }
+}
+
+.bg-iphone5s {
+  width: 334px;
+  height: 697px;
+  position: relative;
+
+  [class^="ss-"],
+  [class*=" ss-"] {
+    .position(absolute, 50%, 50%);
+    .transform(translate3d(50%, -50%, 0));
+  }
+}
+
+[class^="ss-"],
+[class*=" ss-"] {
+  width: 278px !important;
+  height: 493px !important;
+}
