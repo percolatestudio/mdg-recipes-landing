@@ -1,13 +1,20 @@
+.bg-landing,
+.bg-source,
+.bg-meteor {
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
 .bg-landing {
   .background-image(
     linear-gradient(top, rgba(194,130,0,.7) 0%, rgba(203,189,145,.7) 100%),
     url('img/bg-landing-1600x1000.jpg')
   );
-
-  background-position: center center;
-  background-repeat: no-repeat;
-  background-size: cover;
 }
+
+.bg-source { background-image: url('img/bg-source-600x600.jpg'); }
+.bg-meteor { background-image: url('img/bg-meteor-600x600.jpg'); }
 
 
 // Retina screenshots
@@ -18,7 +25,11 @@
 .ss-winter { .at2x('img/ss-winter-278x493.jpg', 278px, 493px); }
 
 // Retina phone chrome
-.bg-iphone5s { .at2x('img/ss-iphone5s-chrome-334x697.png', 334px, 697px); }
+.bg-iphone5s {
+  .at2x('img/ss-iphone5s-chrome-334x697.png', 334px, 697px);
+  background-position: center center;
+  background-repeat: no-repeat;
+}
 
 // Retina avatars
 .chef-colin {

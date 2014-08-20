@@ -89,33 +89,38 @@
 
     <section class="inspire">
       <div class="iphone-comps">
-        <div class="ss-home"></div>
-        <div class="ss-summer"></div>
-        <div class="bg-iphone5s">
-          <div class="ss-categories"></div>
+        <div class="wrapper"><div class="ss-home"></div></div>
+        <div class="wrapper"><div class="ss-summer"></div></div>
+        <div class="wrapper">
+          <div class="bg-iphone5s"><div class="ss-categories"></div></div>
         </div>
-        <div class="ss-recipe"></div>
-        <div class="ss-winter"></div>
+        <div class="wrapper"><div class="ss-recipe"></div></div>
+        <div class="wrapper"><div class="ss-winter"></div></div>
       </div>
       <h3 class="title-section">Be Inspired</h3>
       <div class="description-section">Incredible recipes paired with delectable imagery offer an unparalleled browsing experience. Explore, bookmark, and be inspired for your next meal.</div>
     </section>
 
-    <section class="project-details">
-      <div class="subsection open-source">
-        <h4 class="title-subsection">Open Source</h4>
-        <p class="description-subsection">Sometimes the best things in life are free; golden sunsets, rich conversations, breaking bread with friends and now Sous. Download the source code and craft great apps.</p>
-        <a class="btn-wire">Fork on Github</a>
+    <section class="project-details grid-2">
+      <div class="subsection bg-source">
+        <div class="wrapper-subsection">
+          <h4 class="title-subsection">Open Source</h4>
+          <p class="description-subsection">Sometimes the best things in life are free; golden sunsets, rich conversations, breaking bread with friends and now Sous. Download the source code and craft great apps.</p>
+          <a class="btn-wire">Fork on Github</a>
+        </div>
       </div>
-      <div class="subsection made-with">
-        <h4 class="title-subsection"><span class="aside">Made with </span>Meteor JS</h4>
-        <p class="description-subsection">The key ingredient in Sous is Meteor, a modern javascript framework for realtime apps. Use Meteor to drive the future of web & mobile experiences.</p>
-        <a class="btn-wire">Learn More</a>
+      <div class="subsection bg-meteor">
+        <div class="wrapper-subsection">
+          <span class="aside">Made with</span>
+          <h4 class="title-subsection">Meteor JS</h4>
+          <p class="description-subsection">The key ingredient in Sous is Meteor, a modern javascript framework for realtime apps. Use Meteor to drive the future of web & mobile experiences.</p>
+          <a class="btn-wire">Learn More</a>
+        </div>
       </div>
     </section>
 
     <footer>
-      <div class="stats-social">
+      <div class="stats-social grid-3">
         <div class="stat-social">
           <div class="count-social">240</div>
           <div class="title-social">Github</div>
@@ -134,8 +139,8 @@
         <a href="http://meteor.com">Meteor</a> <span class="ampersand">&</span> <a href="http://percolatestudio.com">Percolate Studio</a>
       </div>
 
-      <img src="img/logo-sous.svg" style="background:#333; width: 30px; height: auto;"/>
-      <span class="disclaimer">Recipes copyright respective authors</span>
+      <img src="img/logo-sous.svg" class="logo-sous"/>
+      <div class="disclaimer">Recipes copyright respective authors</div>
     </footer>
 
     <!-- Scripts -->
