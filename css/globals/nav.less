@@ -7,7 +7,9 @@ nav {
   z-index: 10;
 
   .title-page {
-    .font-m1;
+    .font-s2;
+    @media screen and (min-width: 50em) { .font-m1; }
+
     .type-secondary;
     .title-caps;
     .ellipsized;
@@ -28,9 +30,25 @@ nav {
       left: auto;
       right: 1.25rem;
     }
+  }
+  .btns-wrapper {
+    margin-right: .75em;
+  }
+  .btn-wire-small {
+    // responsively show
+    .icon-github { display: inline-block; }
+    .text { display: none; }
+    @media screen and (min-width: 50em) {
+      .icon-github { display: none; }
+      .text { display: inline; }
+    }
 
-    .btns-wrapper {
-      margin-right: .75em;
+    .icon-github {
+      //reset default button styling
+      letter-spacing: 0;
+      text-indent: -.3rem;
+
+      .font-s2;
     }
   }
 }

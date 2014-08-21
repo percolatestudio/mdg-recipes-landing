@@ -2,19 +2,19 @@
 
 .page-margins() {
   margin: 0;
-  @media screen and (min-width: 50em) { margin: 0 @column; }
-  @media screen and (min-width: 70em) { margin: 0 2*@column; }
-  @media screen and (min-width: 90em) { margin: 0 3*@column; }
+  @media screen and (min-width: 50em) { margin: 0 2*@column; }
+  @media screen and (min-width: 70em) { margin: 0 3*@column; }
+  @media screen and (min-width: 90em) { margin: 0 4*@column; }
 }
 
-.std-ypadding() {
-  padding-top: 1.5rem;
-  @media screen and (min-width: 30em) { padding-top: 2rem; }
-  @media screen and (min-width: 40em) { padding-top: 3rem; }
+.std-ypadding(@multiplier:1) {
+  padding-top: 1rem * @multiplier;
+  @media screen and (min-width: 30em) { padding-top: 2rem * @multiplier; }
+  @media screen and (min-width: 50em) { padding-top: 3rem * @multiplier; }
 
-  padding-bottom: 1.5rem;
-  @media screen and (min-width: 30em) { padding-bottom: 2rem; }
-  @media screen and (min-width: 40em) { padding-bottom: 3rem; }
+  padding-bottom: 1rem * @multiplier;
+  @media screen and (min-width: 30em) { padding-bottom: 2rem * @multiplier; }
+  @media screen and (min-width: 50em) { padding-bottom: 3rem * @multiplier; }
 }
 
 .std-xpadding() {

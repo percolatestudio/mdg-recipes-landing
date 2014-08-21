@@ -12,12 +12,17 @@
   vertical-align: middle;
   white-space: nowrap;
 
-  // Sizing
-  .font-s2;
-  line-height: 1.5em !important; //override line-height always so we can use em's to size.
-  padding: 1em 1.25em .90em; // 48px tall, offset because caps
 
-  // Sizing for small buttons
+  // Sizing
+  font-size: 12px;
+  line-height: 1.5em !important; //override line-height always so we can use em's to size.
+  padding: .65em 1.25em .55em; // 32px tall, offset because caps
+  @media screen and (min-width: 50em) {
+    .font-s2;
+    padding: 1em 1.25em .90em; // 48px tall, offset because caps
+  }
+
+  // 'Small' buttons always get responsive styling
   &[class*="-small"] {
     font-size: 12px;
     padding: .65em 1.25em .55em; // 32px tall, offset because caps

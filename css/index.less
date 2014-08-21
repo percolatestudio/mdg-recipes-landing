@@ -1,18 +1,29 @@
+@width-iphone: 334px;
+@height-iphone: 697px;
+
 header {
-  padding-top: 9em;
+  .std-xpadding;
+  padding-top: 6em;
+  @media screen and (min-width: 50em) { padding-top: 9em; }
+
   text-align: center;
   position: relative;
   overflow: hidden;
 
   .title-app {
-    .font-l2;
+    .font-m3;
+    @media screen and (min-width: 50em) { .font-l2; }
+
     color: @color-empty;
-    margin-bottom: 1.5rem;
+    margin-bottom: .5em;
   }
+
   .description-app {
-    .font-m2;
+    .font-s3;
+    @media screen and (min-width: 50em) { .font-m2; }
+
     color: @color-empty;
-    margin-bottom: 2rem;
+    margin-bottom: 1.5em;
   }
 
   .btn-secondary {
@@ -21,49 +32,75 @@ header {
     margin-bottom: 3em;
   }
   .bg-iphone5s {
-    display: inline-block;
-    width: 334px;
-    height: 697px;
-    margin-bottom: -9em;
+    margin-bottom: @height-iphone * .75 * -.2;
+    @media screen and (min-width: 50em) { margin-bottom: @height-iphone * -.2; }
   }
 }
 
 
 .value-statement {
   box-shadow: rgba(0,0,0,.15) 0 1px 3px 0;
-  text-align: center;
   position: relative;
+  padding: 3rem 0;
 
-  //vertical dividers of equal height
-  &:after {
-    content: '';
-    .position(absolute, 0, auto, 0, 33.33%, 33.33%, 100%);
-    border-left: 1px solid @color-rare;
-    border-right: 1px solid @color-rare;
+  @media screen and (min-width: 40em) { text-align: center; }
+  @media screen and (min-width: 40em) {
+    padding: 2.5rem 0 3rem;
+    //vertical dividers of equal height
+    &:after {
+      content: '';
+      .position(absolute, 0, auto, 0, 33.33%, 33.33%, 100%);
+      border-left: 1px solid @color-rare;
+      border-right: 1px solid @color-rare;
+    }
   }
 
   .subsection {
-    padding: 2.5em 1.25rem 3rem;
+    .std-xpadding;
+
+    @media screen and (max-width: 40em) {
+      & + .subsection { margin-top: 1.5em; }
+    }
   }
 
   [class^="icon-"],
   [class*=" icon-"] {
-    .font-m3;
     color: @color-tertiary;
     display: inline-block;
     margin-bottom: .75rem;
+
+    .font-m3;
+    float: left;
+    margin-right: 1em;
+    @media screen and (min-width: 40em) {
+      float: none;
+      margin-right: 0;
+    }
   }
+
+  .meta { overflow: hidden; }
   .title-subsection {
-    .font-m2;
     .type-black;
     .title-caps;
     .ellipsized;
-    margin-bottom: .5rem;
+
+    .font-s3;
+    @media screen and (max-width: 40em) { text-indent: 0; }
+    @media screen and (min-width: 40em) {
+      .font-m2;
+      margin-bottom: .5em;
+    }
   }
+
   .description-subsection {
     color: @color-medium-well;
     display: inline-block;
-    max-width: 200px;
+
+    .font-s2;
+    @media screen and (min-width: 40em) {
+      .font-s3;
+      max-width: 200px;
+    }
   }
 }
 
@@ -72,51 +109,81 @@ header {
   background-position: center center;
   background-repeat: no-repeat;
   background-size: cover;
-  padding: 9em 0;
+  .std-ypadding(3);
+  //padding: 9em 0;
 
   .section-wrapper {
-    margin: 0 10%;
-    padding: 4.5em;
-    background: rgba(255,255,255,.95);
+    .page-margins;
+    .std-xpadding;
+    background: rgba(255,255,255,.93);
+    padding-top: 3rem;
+    padding-bottom: 3rem;
     text-align: center;
 
+    @media screen and (min-width: 50em) {
+      padding: 4.5em;
+
+    }
+
     .title-section {
-      .font-l1;
       .type-black;
       .title-caps;
 
+      .font-m2;
+      @media screen and (max-width: 50em) { text-indent: 0; }
+      @media screen and (min-width: 50em) { .font-l1; }
+
       color: @color-tertiary;
-      margin-bottom: 1rem;
+      margin-bottom: .5em;
     }
     .description-section {
-      .font-m2;
+      .font-s3;
+      @media screen and (min-width: 50em) { .font-m2; }
+
       color: @color-medium-well;
       line-height: 1.5em;
-      margin-bottom: 3rem;
+      margin-bottom: 1.5em;
     }
     .subsection-wrapper {
-      text-align: center;
+      text-align: left;
+      @media screen and (min-width: 40em) { text-align: center; }
       .subsection {
+        @media screen and (max-width: 40em) {
+          & + .subsection { margin-top: 1.5em; }
+        }
+
         .avatar {
-          width: 80px;
-          height: 80px;
+          height: 60px;
+          width: 60px;
           border-radius: 10em;
           display: inline-block;
           overflow: hidden;
           margin-bottom: 1em;
+
+          float: left;
+          margin-right: 1em;
+          @media screen and (min-width: 40em) {
+            width: 80px;
+            height: 80px;
+            float: none;
+            margin-right: 0;
+          }
         }
+        .meta { overflow: hidden; }
         .name-chef {
           .type-bold;
         }
         .title-chef {
           .font-s2;
           color: @color-medium-well;
+          margin-bottom: .25rem;
         }
         .organization-chef {
           .font-s1;
           .type-secondary;
           .title-caps;
           color: @color-medium;
+          display: block;
         }
       }
     }
@@ -153,17 +220,31 @@ header {
         }
       }
 
-      //horizontal offsets to ensure center alignment accounting for iphone chrome
+
       > * {
         display: inline-block;
         position: relative;
+
+        &[class^="ss-"],
+        &[class*=" ss-"] {
+          left: 50%;
+          margin-left: -100%;
+
+          width:  @width-iphone * .75 * .8323;
+          height: @height-iphone * .75 * .7073;
+          @media screen and (min-width: 50em) {
+            width:  @width-iphone * .8323;
+            height: @height-iphone * .7073;
+          }
+        }
       }
       .bg-iphone5s {
-        .transform(translate3d(-50%,0,0));
         left: 50%;
+        margin-left: -100%;
       }
-      &:nth-child(-n+2) > * { left: -8%; }
-      &:nth-child(n+4) > * { right: -8%; }
+      //horizontal offsets to ensure center alignment accounting for iphone chrome
+      &:nth-child(-n+2) > * { left: 42%; }
+      &:nth-child(n+4) > * { left: 58%; }
     }
   }
   .title-section {
@@ -176,11 +257,10 @@ header {
   }
   .description-section {
     .font-m2;
+    .page-margins;
     color: @color-medium-well;
     line-height: 1.5em;
-    margin-bottom: 4.5rem;
-    margin-left: 15%;
-    margin-right: 15%;
+    margin-bottom: 6rem !important;
   }
 }
 
@@ -271,20 +351,27 @@ footer {
   }
 }
 
+
 .bg-iphone5s {
-  width: 334px;
-  height: 697px;
+  display: inline-block;
   position: relative;
 
+  height: @height-iphone * .75;
+  width: @width-iphone * .75;
+  @media screen and (min-width: 50em) {
+    height: @height-iphone;
+    width: @width-iphone;
+  }
   [class^="ss-"],
   [class*=" ss-"] {
     .position(absolute, 50%, 50%);
     .transform(translate3d(50%, -50%, 0));
-  }
-}
 
-[class^="ss-"],
-[class*=" ss-"] {
-  width: 278px !important;
-  height: 493px !important;
+    width:  @width-iphone * .75 * .8323;
+    height: @height-iphone * .75 * .7073;
+    @media screen and (min-width: 50em) {
+      width:  @width-iphone * .8323;
+      height: @height-iphone * .7073;
+    }
+  }
 }

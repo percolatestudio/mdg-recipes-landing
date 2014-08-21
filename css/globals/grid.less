@@ -4,8 +4,13 @@
   > * {
     display: inline-block;
     vertical-align: top;
+    width: 100%;
   }
 }
 
-.grid-3 > * { width: 33.33%; }
-.grid-2 > * { width: 50%; }
+.grid-3 > * {
+  @media screen and (min-width: 40em) { width: 33.33%;  }
+}
+.grid-2 > * {
+  @media screen and (min-width: 40em) { width: 50%;  }
+}
