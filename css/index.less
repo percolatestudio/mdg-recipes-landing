@@ -130,7 +130,6 @@ header {
       .title-caps;
 
       .font-m2;
-      @media screen and (max-width: 50em) { text-indent: 0; }
       @media screen and (min-width: 50em) { .font-l1; }
 
       color: @color-tertiary;
@@ -247,17 +246,28 @@ header {
       &:nth-child(n+4) > * { left: 58%; }
     }
   }
+
+  .title-section,
+  .description-section {
+    .std-xpadding;
+  }
+
   .title-section {
-    .font-l1;
     .type-black;
     .title-caps;
 
+    .font-m2;
+    @media screen and (min-width: 50em) { .font-l1; }
+
     color: @color-tertiary;
-    margin-bottom: 1rem;
+    margin-bottom: .5em;
   }
   .description-section {
-    .font-m2;
     .page-margins;
+
+    .font-s3;
+    @media screen and (min-width: 50em) { .font-m2; }
+
     color: @color-medium-well;
     line-height: 1.5em;
     margin-bottom: 6rem !important;
@@ -274,14 +284,20 @@ header {
   }
 
   .title-subsection {
-    .font-l1;
     .type-black;
     .title-caps;
+
+    .font-m2;
+    @media screen and (min-width: 50em) { .font-l1; }
+
     margin-bottom: 1rem;
   }
   .description-subsection {
-    .font-m1;
-    line-height: 1.5em;
+    .font-s3;
+    @media screen and (min-width: 50em) { .font-m1; }
+
+
+    line-height: 1.8em !important;
     margin-bottom: 1.5rem;
   }
   .aside {
@@ -347,7 +363,7 @@ footer {
   .disclaimer {
     .font-s1;
     .title-caps;
-    color: @color-medium;
+    color: @color-medium-well;
   }
 }
 
