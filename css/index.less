@@ -206,11 +206,13 @@ header {
       vertical-align: middle;
       width: 20%;
       position: relative;
-      &:nth-child(3) { z-index: 2; }
+      &:nth-child(1) { opacity: .8; }
       &:nth-child(2) { z-index: 1; }
+      &:nth-child(3) { z-index: 2; }
       &:nth-child(4) { z-index: 1; }
+      &:nth-child(5) { opacity: .8; }
 
-      //shadows on screenshots without chrome
+      //shadows on screenshots without iphone chrome
       &:nth-child(-n+2),
       &:nth-child(n+4) {
         [class^="ss-"],
@@ -219,7 +221,7 @@ header {
         }
       }
 
-
+      //screenshot positioning
       > * {
         display: inline-block;
         position: relative;
@@ -237,9 +239,10 @@ header {
           }
         }
       }
+      // iphone positioning
       .bg-iphone5s {
+        .transform(translateX(-50%));
         left: 50%;
-        margin-left: -100%;
       }
       //horizontal offsets to ensure center alignment accounting for iphone chrome
       &:nth-child(-n+2) > * { left: 42%; }
@@ -269,8 +272,8 @@ header {
     @media screen and (min-width: 50em) { .font-m2; }
 
     color: @color-medium-well;
-    line-height: 1.5em;
-    margin-bottom: 6rem !important;
+    line-height: 1.5em !important;
+    padding-bottom: 6rem;
   }
 }
 
@@ -279,8 +282,13 @@ header {
   text-align: center;
 
   .subsection {
-    height: 600px;
-    padding: 12em 2em 0;
+    .std-xpadding;
+    padding-top: 6em;
+    padding-bottom: 5em;
+    @media screen and (min-width: 50em) {
+      height: 600px;
+      padding-top: 12em;
+    }
   }
 
   .title-subsection {
@@ -290,7 +298,7 @@ header {
     .font-m2;
     @media screen and (min-width: 50em) { .font-l1; }
 
-    margin-bottom: 1rem;
+    margin-bottom: .4em;
   }
   .description-subsection {
     .font-s3;
@@ -298,7 +306,8 @@ header {
 
 
     line-height: 1.8em !important;
-    margin-bottom: 1.5rem;
+    margin: 0 auto 1em;
+    max-width: 80%;
   }
   .aside {
     .type-secondary;
@@ -314,20 +323,32 @@ header {
 }
 
 footer {
+  .std-xpadding;
+
   background: @color-full;
   color: @color-empty;
   text-align: center;
-  padding: 3em 2em;
+  padding-top: 3em;
   .stats-social {
-    width: 40%;
+    .inline-block-whitespace;
     display: inline-block;
     margin-bottom: 3rem;
+    width: 80%;
+    max-width: 480px;
+    .stat-social {
+      display: inline-block;
+      padding: 0 .5em;
+      width: 33.33%;
+    }
     .count-social {
-      .font-l1;
-      margin-bottom: .5rem;
+      .font-m3;
+      @media screen and (min-width: 50em) { .font-l1; }
+
+      margin-bottom: .14em;
     }
     .title-social {
-      .font-s2;
+      .font-s1;
+      @media screen and (min-width: 50em) { .font-s2; }
       .type-black;
       .title-caps;
     }

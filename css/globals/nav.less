@@ -32,23 +32,79 @@ nav {
     }
   }
   .btns-wrapper {
-    margin-right: .75em;
+    margin-right: 1em;
+
+    > a:before,
+    .count { display: none; }
+    @media screen and (min-width: 50em) {
+      > a:before,
+      .count { display: inline-block; }
+    }
   }
   .btn-wire-small {
     // responsively show
-    .icon-github { display: inline-block; }
-    .text { display: none; }
-    @media screen and (min-width: 50em) {
-      .icon-github { display: none; }
-      .text { display: inline; }
+    display: none;
+    @media screen and (min-width: 50em) { display: inline-block; }
+
+    & + .mobile-icon {
+      display: inline-block;
+      @media screen and (min-width: 50em) { display: none; }
     }
+  }
+}
 
-    .icon-github {
-      //reset default button styling
-      letter-spacing: 0;
-      text-indent: -.3rem;
+.mobile-icon {
+  .font-m1;
+  color: @color-empty;
+  display: inline-block;
+  position: relative;
+  vertical-align: middle;
+  width: 32px;
+  height: 32px;
+  line-height: 32px;
+}
 
-      .font-s2;
+
+.btns-wrapper {
+  color: @color-empty;
+  display: inline-block;
+
+  .mobile-icon {
+    &:before { // the left arrow to complete the count UI
+      .position(absolute, 50%, -4px, auto, auto, 6px, 12px);
+      .transform(translate3d(0, -50%, 0));
+      content: '';
+      background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' x='0px' y='0px' width='6.708px' height='13.415px' ><polygon fill='#FFFFFF' points='6.708,12.001 1.414,6.708 6.708,1.414 6.708,0 0,6.708 6.708,13.415 '/></svg>");
+      background-repeat: no-repeat;
+    }
+  }
+
+  .count {
+    .type-black;
+
+    border-right: 1px solid @color-empty;
+    border-top: 1px solid @color-empty;
+    border-bottom: 1px solid @color-empty;
+    display: inline-block;
+    font-size: 12px;
+    height: 32px;
+    line-height: 30px;
+    padding: 0 .75em;
+    position: relative;
+    overflow: hidden;
+    vertical-align: middle;
+
+    &:before,
+    &:after {
+      .position(absolute, auto, auto, auto, 0, auto, 50%);
+      content: '';
+      border-left: 1px solid @color-empty;
+    }
+    &:before {
+      top: -5px;
+    }
+    &:after {
+      bottom: -5px;
     }
   }
 }
