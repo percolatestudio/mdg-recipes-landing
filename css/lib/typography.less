@@ -73,3 +73,9 @@
   font-size: 10px;
   line-height: 16px;
 }
+
+
+.font-responsive(@mobile; @desktop; @breakpoint: 50em;) {
+  @mobile();
+  @media screen and (min-width: @breakpoint) { @desktop(); }
+}

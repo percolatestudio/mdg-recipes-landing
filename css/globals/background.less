@@ -12,18 +12,11 @@
     linear-gradient(top, rgba(194,130,0,.75) 0%, rgba(203,189,145,.75) 100%),
     url('img/bg-landing-1600x1000.jpg')
   );
-  //background-attachment: fixed;
 }
 
-.bg-chefs {
-  .at2x('img/bg-grid-recipes-1200x800.jpg');
-}
-
-
+.bg-chefs { .at2x('img/bg-grid-recipes-1200x800.jpg'); }
 .bg-source { background-image: url('img/bg-source-600x600.jpg'); }
 .bg-meteor { background-image: url('img/bg-meteor-600x600.jpg'); }
-
-
 
 
 // Screenshots
@@ -39,7 +32,13 @@
 .ss-summer { .at2x('img/ss-summer-278x493.jpg'); }
 .ss-winter { .at2x('img/ss-winter-278x493.jpg'); }
 
-// iPhone5s chrome
+// Avatars
+.chef-colin {
+  .at2x('img/chef-colin-80x80.jpg');
+  background-size: contain;
+}
+
+// iPhone5s chrome & screenshot
 .bg-iphone5s {
   .at2x('img/ss-iphone5s-chrome-334x697.png');
   background-position: center center;
@@ -47,8 +46,26 @@
   background-size: contain;
 }
 
-// Avatars
-.chef-colin {
-  .at2x('img/chef-colin-80x80.jpg');
-  background-size: contain;
+.bg-iphone5s {
+  display: inline-block;
+  position: relative;
+
+  height: @height-iphone * .75;
+  width: @width-iphone * .75;
+  @media screen and (min-width: 50em) {
+    height: @height-iphone;
+    width: @width-iphone;
+  }
+  [class^="ss-"],
+  [class*=" ss-"] {
+    .position(absolute, 50%, 50%);
+    .transform(translate3d(50%, -50%, 0));
+
+    width:  @width-iphone * .75 * .8323;
+    height: @height-iphone * .75 * .7073;
+    @media screen and (min-width: 50em) {
+      width:  @width-iphone * .8323;
+      height: @height-iphone * .7073;
+    }
+  }
 }

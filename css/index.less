@@ -1,6 +1,6 @@
+// iphone5s dimensions used to calculate responsive sizes + screenshot placement
 @width-iphone: 334px;
 @height-iphone: 697px;
-
 
 header {
   .std-xpadding;
@@ -8,21 +8,19 @@ header {
   padding-top: 6em;
   @media screen and (min-width: 50em) { padding-top: 9em; }
 
-  text-align: center;
-  position: relative;
   overflow: hidden;
+  position: relative;
+  text-align: center;
 
   .title-app {
-    .font-m3;
-    @media screen and (min-width: 50em) { .font-l2; }
+    .font-responsive({.font-m3;}, {.font-l2;});
 
     color: @color-empty;
     margin-bottom: .5em;
   }
 
   .description-app {
-    .font-s3;
-    @media screen and (min-width: 50em) { .font-m2; }
+    .font-responsive({.font-s3;}, {.font-m2;});
 
     color: @color-empty;
     margin-bottom: 1.5em;
@@ -82,27 +80,22 @@ header {
 
   .meta { overflow: hidden; }
   .title-subsection {
+    .font-responsive({.font-s3;}, {.font-m2;}, 40em);
     .type-black;
     .title-caps;
     .ellipsized;
 
-    .font-s3;
     @media screen and (max-width: 40em) { text-indent: 0; }
-    @media screen and (min-width: 40em) {
-      .font-m2;
-      margin-bottom: .5em;
-    }
+    @media screen and (min-width: 40em) { margin-bottom: .5em; }
   }
 
   .description-subsection {
+    .font-responsive({.font-s2;}, {.font-s3;}, 40em);
+
     color: @color-medium-well;
     display: inline-block;
 
-    .font-s2;
-    @media screen and (min-width: 40em) {
-      .font-s3;
-      max-width: 200px;
-    }
+    @media screen and (min-width: 40em) { max-width: 200px; }
   }
 }
 
@@ -117,24 +110,18 @@ header {
     padding-bottom: 3rem;
     text-align: center;
 
-    @media screen and (min-width: 50em) {
-      padding: 4.5em;
-
-    }
+    @media screen and (min-width: 50em) { padding: 4.5em; }
 
     .title-section {
+      .font-responsive({.font-m2;}, {.font-l1;});
       .type-black;
       .title-caps;
-
-      .font-m2;
-      @media screen and (min-width: 50em) { .font-l1; }
 
       color: @color-tertiary;
       margin-bottom: .5em;
     }
     .description-section {
-      .font-s3;
-      @media screen and (min-width: 50em) { .font-m2; }
+      .font-responsive({.font-s3;}, {.font-m2;});
 
       color: @color-medium-well;
       line-height: 1.5em;
@@ -253,20 +240,16 @@ header {
   }
 
   .title-section {
+    .font-responsive({.font-m2;}, {.font-l1;});
     .type-black;
     .title-caps;
-
-    .font-m2;
-    @media screen and (min-width: 50em) { .font-l1; }
 
     color: @color-tertiary;
     margin-bottom: .5em;
   }
   .description-section {
+    .font-responsive({.font-s3;}, {.font-m2;});
     .page-margins;
-
-    .font-s3;
-    @media screen and (min-width: 50em) { .font-m2; }
 
     color: @color-medium-well;
     line-height: 1.5em !important;
@@ -289,18 +272,14 @@ header {
   }
 
   .title-subsection {
+    .font-responsive({.font-m2;}, {.font-l1;}, 50em);
     .type-black;
     .title-caps;
-
-    .font-m2;
-    @media screen and (min-width: 50em) { .font-l1; }
 
     margin-bottom: .4em;
   }
   .description-subsection {
-    .font-s3;
-    @media screen and (min-width: 50em) { .font-m1; }
-
+    .font-responsive({.font-s3;}, {.font-m1;}, 50em);
 
     line-height: 1.8em !important;
     margin: 0 auto 1em;
@@ -338,14 +317,11 @@ footer {
       width: 33.33%;
     }
     .count-social {
-      .font-m3;
-      @media screen and (min-width: 50em) { .font-l1; }
-
+      .font-responsive({.font-m3;}, {.font-l1;});
       margin-bottom: .14em;
     }
     .title-social {
-      .font-s1;
-      @media screen and (min-width: 50em) { .font-s2; }
+      .font-responsive({.font-s1;}, {.font-s2;});
       .type-black;
       .title-caps;
     }
@@ -383,30 +359,5 @@ footer {
     .title-caps;
     color: @color-medium-well;
     padding-bottom: 2em;
-  }
-}
-
-
-.bg-iphone5s {
-  display: inline-block;
-  position: relative;
-
-  height: @height-iphone * .75;
-  width: @width-iphone * .75;
-  @media screen and (min-width: 50em) {
-    height: @height-iphone;
-    width: @width-iphone;
-  }
-  [class^="ss-"],
-  [class*=" ss-"] {
-    .position(absolute, 50%, 50%);
-    .transform(translate3d(50%, -50%, 0));
-
-    width:  @width-iphone * .75 * .8323;
-    height: @height-iphone * .75 * .7073;
-    @media screen and (min-width: 50em) {
-      width:  @width-iphone * .8323;
-      height: @height-iphone * .7073;
-    }
   }
 }
