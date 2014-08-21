@@ -28,12 +28,12 @@ nav {
     }
   }
   .btns-wrapper {
-    margin-right: 1em;
-
+    margin-right: .5em;
     > a:before,
     .count { display: none; }
 
     @media screen and (min-width: 50em) {
+      margin-right: 1em;
       > a:before,
       .count { display: inline-block; }
     }
@@ -52,17 +52,17 @@ nav {
 }
 
 .mobile-icon {
-  .font-m1;
-  color: @color-empty;
+  .font-responsive({.font-s3;}, {.font-m1;});
   display: inline-block;
   position: relative;
   vertical-align: middle;
   width: 32px;
   height: 32px;
-  line-height: 32px;
+  line-height: 32px !important;
 
-  opacity: .8;
-  @media screen and (min-width: 50em) { opacity: 1; }
+  color: @color-empty;
+  &:hover { color: @color-empty; }
+  &:active { color: @color-medium; }
 }
 
 .btns-wrapper {

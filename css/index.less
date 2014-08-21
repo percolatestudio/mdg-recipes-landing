@@ -165,8 +165,11 @@ header {
           .font-s1;
           .type-secondary;
           .title-caps;
-          color: @color-medium;
           display: block;
+
+          color: @color-medium;
+          &:hover { color: @color-primary; }
+          &:active { color: @color-medium; }
         }
       }
     }
@@ -309,11 +312,11 @@ footer {
     .inline-block-whitespace;
     display: inline-block;
     margin-bottom: 3rem;
-    width: 80%;
+    width: 90%;
     max-width: 480px;
     .stat-social {
       display: inline-block;
-      padding: 0 .5em;
+      padding: 0 .25em;
       width: 33.33%;
     }
     .count-social {
@@ -327,11 +330,11 @@ footer {
     }
   }
   .attribution {
-    .font-m1;
+    .font-responsive({.font-s3;}, {.font-m1;});
     margin-bottom: 3rem;
 
     .message-attribution {
-      .font-s2;
+      .font-responsive({.font-s1;}, {.font-s2;});
       .type-secondary;
       .title-caps;
 
@@ -342,6 +345,8 @@ footer {
     a {
       .type-bold;
       color: @color-empty;
+      &:hover { color: @color-primary; }
+      &:active { color: @color-medium; }
     }
 
     .ampersand { //fancy quote
