@@ -20,7 +20,8 @@ module.exports = function(grunt) {
         tasks: ['less']
       }
     },
-    aws: grunt.file.readJSON(process.env.HOME + '/secret-config/percolate-s3-deploy.json'),
+    aws: grunt.file.readJSON(process.env.HOME 
+      + '/Google\ Drive/Percolate\ Studio\ Corporate/Auth/config/percolate-s3-deploy.json'),
     s3: {
       options: {
         key: '<%= aws.key %>',
