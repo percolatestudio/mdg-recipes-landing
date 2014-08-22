@@ -27,9 +27,9 @@ header {
   }
 
   .btn-secondary {
+    margin-bottom: 3em;
     padding-left: 2em;
     padding-right: 2em;
-    margin-bottom: 3em;
   }
   .bg-iphone5s {
     margin-bottom: @height-iphone * .75 * -.2;
@@ -40,18 +40,18 @@ header {
 
 .value-statement {
   box-shadow: rgba(0,0,0,.15) 0 1px 3px 0;
-  position: relative;
   padding: 3rem 0;
+  position: relative;
 
   @media screen and (min-width: 40em) { text-align: center; }
   @media screen and (min-width: 40em) {
     padding: 2.5rem 0 3rem;
     //vertical dividers of equal height
     &:after {
-      content: '';
       .position(absolute, 0, auto, 0, 33.33%, 33.33%, 100%);
       border-left: 1px solid @color-rare;
       border-right: 1px solid @color-rare;
+      content: '';
     }
   }
 
@@ -193,6 +193,8 @@ header {
       vertical-align: middle;
       width: 20%;
       position: relative;
+
+      // Ensures that the screens overlap realistically
       &:nth-child(1) { opacity: .8; }
       &:nth-child(2) { z-index: 1; }
       &:nth-child(3) { z-index: 2; }
@@ -289,31 +291,31 @@ header {
     max-width: 80%;
   }
   .aside {
+    .font-s1;
     .type-secondary;
     .title-caps;
-    .font-s1;
 
-    opacity: .5;
     display: block;
     line-height: 1;
-    margin-top: -3em;
     margin-bottom: 2em;
+    margin-top: -3em;
+    opacity: .5;
   }
 }
 
 footer {
   .std-xpadding;
-
   background: @color-full;
   color: @color-empty;
-  text-align: center;
   padding-top: 3em;
+  text-align: center;
+
   .stats-social {
     .inline-block-whitespace;
     display: inline-block;
     margin-bottom: 3rem;
-    width: 90%;
     max-width: 480px;
+    width: 90%;
     .stat-social {
       display: inline-block;
       padding: 0 .25em;
@@ -356,8 +358,8 @@ footer {
   }
   .logo-sous {
     height: 30px;
-    width: auto;
     margin-bottom: 1rem;
+    width: auto;
   }
   .disclaimer {
     .font-s1;

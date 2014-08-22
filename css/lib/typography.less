@@ -21,8 +21,7 @@
 }
 
 
-/* Large fonts */
-
+// Large fonts
 .font-l3() {
   font-size: 56px;
   line-height: 60px;
@@ -38,8 +37,7 @@
   line-height: 44px;
 }
 
-/* Medium fonts */
-
+// Medium fonts
 .font-m3() {
   font-size: 28px;
   line-height: 32px;
@@ -55,11 +53,10 @@
   line-height: 24px;
 }
 
-/* Small fonts */
-
+// Small fonts
 .font-s3() {
-  //this sets the baseline for the layout but gets overridden per template
-  //vertical rhythm is all multiples of 4
+  //this sets the baseline for the layout but gets overridden manually when necessary
+  //the vertical rhythm is base 4px
   font-size: 16px;
   line-height: 24px;
 }
@@ -74,7 +71,7 @@
   line-height: 16px;
 }
 
-
+// Simple responsive typeface mixin
 .font-responsive(@mobile; @desktop; @breakpoint: 50em;) {
   @mobile();
   @media screen and (min-width: @breakpoint) { @desktop(); }
