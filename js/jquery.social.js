@@ -1,6 +1,6 @@
 /* jquery.social.js
  *
- * A dead simple social share jQuery plugin. Network data lifted from 
+ * A dead simple social share jQuery plugin. Network data lifted from
  * social-likes (https://github.com/sapegin/social-likes).
  *
  * Usage:
@@ -33,7 +33,7 @@
       convertNumber: function(data) {
         return data.count;
       },
-      popupUrl: 'https://twitter.com/intent/tweet?url={url}&text=Checkout',
+      popupUrl: 'https://twitter.com/intent/tweet?url={url}&text=Checkout%20Sous,%20the%20best%20recipes%20on%20the%20web%20hand-picked%20by%20top%20chefs &hashtags=OpenSource,MeteorJS,HTML5',
       popupWidth: 600,
       popupHeight: 450,
     },
@@ -94,7 +94,7 @@
       }
     });
   }
-  
+
   $.fn.social = function(options) {
     // defaults to facebook
     var options = $.extend({
@@ -111,5 +111,5 @@
     });
 
     return this;
-  }; 
+  };
 }(jQuery));
